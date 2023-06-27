@@ -11,7 +11,6 @@ finish-args:
   - --socket=pulseaudio
   - --share=ipc
   - --device=dri
-  - --filesystem=xdg-data
   - --env=DOOMWADDIR=/app/extra/doom
 
 modules:
