@@ -1,6 +1,6 @@
 app-id: org.chocolate_doom.ChocolateDoom
 runtime: org.freedesktop.Platform
-runtime-version: 22.08
+runtime-version: 23.08
 sdk: org.freedesktop.Sdk
 command: chocolate-doom
 rename-desktop-file: chocolate-doom.desktop
@@ -14,22 +14,6 @@ finish-args:
   - --env=DOOMWADDIR=/app/extra/doom
 
 modules:
-  - name: SDL2_net
-    buildsystem: autotools
-    rm-configure: true
-    config-opts:
-      - --disable-static
-    cleanup:
-      - /bin
-      - /include
-      - /lib/pkgconfig
-      - /share
-    sources:
-      - type: git
-        url: https://github.com/libsdl-org/SDL_net
-        tag: release-2.2.0
-        commit: 669e75b84632e2c6cc5c65974ec9e28052cb7a4e
-
   - name: chocolate-doom
     buildsystem: autotools
     build-options:
