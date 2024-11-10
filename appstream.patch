@@ -1,0 +1,79 @@
+From 7be954bb605fb8ff4aa8ccf82cf7569693a96ee2 Mon Sep 17 00:00:00 2001
+From: Fabian Greffrath
+Date: Fri, 23 Aug 2024 08:50:46 +0200
+Subject: [PATCH] metainfo: add new required tag
+
+https://github.com/flathub/io.github.fabiangreffrath.Doom/pull/16
+---
+ src/Doom.metainfo.xml.in    | 12 ++++++++++++
+ src/Heretic.metainfo.xml.in |  1 +
+ src/Hexen.metainfo.xml.in   |  1 +
+ src/Strife.metainfo.xml.in  |  1 +
+ 4 files changed, 15 insertions(+)
+
+diff --git a/src/Doom.metainfo.xml.in b/src/Doom.metainfo.xml.in
+index 6499488580..32b9172ead 100644
+--- a/src/Doom.metainfo.xml.in
++++ b/src/Doom.metainfo.xml.in
+@@ -2,6 +2,7 @@
+ 
+ <component type="desktop">
+   <id>@PACKAGE_RDNS@.Doom</id>
++  <launchable type="desktop-id">@PACKAGE_RDNS@.Doom.desktop</launchable>
+   <name>@PACKAGE_SHORTNAME@ Doom</name>
+   <summary>@PACKAGE_SHORTDESC@</summary>
+   <metadata_license>CC0-1.0</metadata_license>
+@@ -25,6 +26,17 @@
+       network stack, allowing it to function on modern LANs and the
+       Internet.
+     </p>
++    <p>
++      The easiest way to run @PACKAGE_SHORTNAME@ Doom is to copy a
++      supported game file (known as a "WAD") to the root of your home
++      directory and launch the application.  If you have trouble with
++      the automatic game file detection or need to manage multiple WAD
++      files, you can run the application from the command line with a
++      path to the selected game file:
++    </p>
++    <p>
++      flatpak run @PACKAGE_RDNS@.Doom -iwad ~/PATH/TO/GAME.WAD
++    </p>
+   </description>
+   <screenshots>
+     <screenshot type="default">
+diff --git a/src/Heretic.metainfo.xml.in b/src/Heretic.metainfo.xml.in
+index 7b2555002a..9f4bdc316f 100644
+--- a/src/Heretic.metainfo.xml.in
++++ b/src/Heretic.metainfo.xml.in
+@@ -2,6 +2,7 @@
+ 
+ <component type="desktop">
+   <id>@PACKAGE_RDNS@.Heretic</id>
++  <launchable type="desktop-id">@PACKAGE_RDNS@.Heretic.desktop</launchable>
+   <name>@PACKAGE_SHORTNAME@ Heretic</name>
+   <summary>@PACKAGE_SHORTDESC@</summary>
+   <metadata_license>CC0-1.0</metadata_license>
+diff --git a/src/Hexen.metainfo.xml.in b/src/Hexen.metainfo.xml.in
+index 97379e4de3..9337015229 100644
+--- a/src/Hexen.metainfo.xml.in
++++ b/src/Hexen.metainfo.xml.in
+@@ -2,6 +2,7 @@
+ 
+ <component type="desktop">
+   <id>@PACKAGE_RDNS@.Hexen</id>
++  <launchable type="desktop-id">@PACKAGE_RDNS@.Hexen.desktop</launchable>
+   <name>@PACKAGE_SHORTNAME@ Hexen</name>
+   <summary>@PACKAGE_SHORTDESC@</summary>
+   <metadata_license>CC0-1.0</metadata_license>
+diff --git a/src/Strife.metainfo.xml.in b/src/Strife.metainfo.xml.in
+index 9d82a4f565..4fdd16a708 100644
+--- a/src/Strife.metainfo.xml.in
++++ b/src/Strife.metainfo.xml.in
+@@ -2,6 +2,7 @@
+ 
+ <component type="desktop">
+   <id>@PACKAGE_RDNS@.Strife</id>
++  <launchable type="desktop-id">@PACKAGE_RDNS@.Strife.desktop</launchable>
+   <name>@PACKAGE_SHORTNAME@ Strife</name>
+   <summary>@PACKAGE_SHORTDESC@</summary>
+   <metadata_license>CC0-1.0</metadata_license>
