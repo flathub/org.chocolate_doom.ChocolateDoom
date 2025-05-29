@@ -1,10 +1,11 @@
 app-id: org.chocolate_doom.ChocolateDoom
 runtime: org.freedesktop.Platform
-runtime-version: 23.08
+runtime-version: '24.08'
 sdk: org.freedesktop.Sdk
 command: chocolate-doom
-rename-desktop-file: chocolate-doom.desktop
-rename-appdata-file: chocolate-doom.appdata.xml
+rename-desktop-file: org.chocolate_doom.Doom.desktop
+rename-appdata-file: org.chocolate_doom.Doom.metainfo.xml
+rename-icon: chocolate-doom
 finish-args:
   - --socket=wayland
   - --socket=fallback-x11
@@ -21,13 +22,10 @@ modules:
     sources:
       - type: git
         url: https://github.com/chocolate-doom/chocolate-doom.git
-        tag: chocolate-doom-3.0.1
-        commit: 539ef367c9982c5945f8608b63d2236eaecc929a
+        tag: chocolate-doom-3.1.0
+        commit: 35fb1372d10756ca27eca05665bd8a7cebc71c05
       - type: patch
-        path: appdata.patch
-    post-install:
-      - install -Dm0644 data/doom.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
-      - desktop-file-edit --set-key="Icon" --set-value="${FLATPAK_ID}" "${FLATPAK_DEST}/share/applications/chocolate-doom.desktop"
+        path: appstream.patch
 
   - name: doom
     buildsystem: simple
