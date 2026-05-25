@@ -1,6 +1,6 @@
 app-id: org.chocolate_doom.ChocolateDoom
 runtime: org.freedesktop.Platform
-runtime-version: '24.08'
+runtime-version: '25.08'
 sdk: org.freedesktop.Sdk
 command: chocolate-doom
 rename-desktop-file: org.chocolate_doom.Doom.desktop
@@ -13,12 +13,16 @@ finish-args:
   - --share=ipc
   - --device=dri
   - --env=DOOMWADDIR=/app/extra/doom
+cleanup:
+  - /share/bash-completion
+  - /share/doc
+  - /share/man
 
 modules:
   - name: chocolate-doom
     buildsystem: autotools
     build-options:
-      cflags: -fcommon
+      cflags: -fcommon -std=gnu17
     sources:
       - type: git
         url: https://github.com/chocolate-doom/chocolate-doom.git
