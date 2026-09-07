@@ -26,10 +26,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/chocolate-doom/chocolate-doom.git
-        tag: chocolate-doom-3.1.0
-        commit: 35fb1372d10756ca27eca05665bd8a7cebc71c05
-      - type: patch
-        path: appstream.patch
+        tag: chocolate-doom-3.1.1
+        commit: 410d96855b5df5410ff591a90efeafa889119224
 
   - name: doom
     buildsystem: simple
